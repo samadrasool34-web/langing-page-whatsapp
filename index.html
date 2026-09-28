@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#07101a">
+<title>Wingo Pro — Join Official Channel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html {
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: #07101a;
+    color: #ffffff;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ============== BACKGROUND ============== */
+.bg-wrap {
+    position: fixed; inset: 0; z-index: 0; overflow: hidden;
+    background: linear-gradient(135deg, #07101a 0%, #0a1a2e 50%, #07101a 100%);
+}
+.dots-layer { position: absolute; inset: 0; overflow: hidden; }
+.dot {
+    position: absolute;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.7);
+    box-shadow: 0 0 8px rgba(37, 211, 102, 0.9);
+    animation: dotFloat linear infinite;
+}
+.dot.gold { background: rgba(251, 191, 36, 0.8); box-shadow: 0 0 8px rgba(251, 191, 36, 1); }
+.dot.cyan { background: rgba(6, 182, 212, 0.7); box-shadow: 0 0 8px rgba(6, 182, 212, 0.9); }
+@keyframes dotFloat {
+    0% { transform: translate(0, 100vh) scale(0.5); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(var(--x, 20px), -100vh) scale(1.2); opacity: 0; }
+}
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    will-change: transform;
+}
+.blob-1 { width: 280px; height: 280px; background: radial-gradient(circle, #25D366, transparent 70%); top: -80px; left: -80px; animation: move1 18s ease-in-out infinite; }
+.blob-2 { width: 240px; height: 240px; background: radial-gradient(circle, #10b981, transparent 70%); top: 30%; right: -100px; animation: move2 22s ease-in-out infinite; }
+.blob-3 { width: 300px; height: 300px; background: radial-gradient(circle, #fbbf24, transparent 70%); bottom: -120px; left: 10%; opacity: 0.25; animation: move3 20s ease-in-out infinite; }
+@keyframes move1 { 0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(60px, 40px) scale(1.15); } 50% { transform: translate(20px, 100px) scale(0.95); } 75% { transform: translate(80px, 30px) scale(1.1); } }
+@keyframes move2 { 0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(-70px, 50px) scale(1.1); } 50% { transform: translate(-30px, -60px) scale(1.2); } 75% { transform: translate(-80px, 20px) scale(0.9); } }
+@keyframes move3 { 0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(50px, -40px) scale(1.1); } 50% { transform: translate(-40px, -80px) scale(0.95); } 75% { transform: translate(70px, -30px) scale(1.15); } }
+
+/* ============== CONTAINER ============== */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 18px 16px 110px;
+}
+
+/* ============== HEADER ============== */
+.header {
+    text-align: center;
+    margin-bottom: 18px;
+    padding-top: 6px;
+    animation: fadeInDown 0.7s ease;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.app-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 14px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #25D366 0%, #10b981 50%, #fbbf24 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 12px 25px rgba(37, 211, 102, 0.5),
+        0 6px 12px rgba(0,0,0,0.5),
+        inset 0 -5px 12px rgba(0,0,0,0.3),
+        inset 0 5px 12px rgba(255,255,255,0.3);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    animation: logoFloat 4s ease-in-out infinite;
+    cursor: pointer;
+}
+.app-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 3;
+}
+.app-logo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.35), transparent);
+    border-radius: 22px 22px 0 0;
+    pointer-events: none;
+    z-index: 2;
+}
+.app-logo svg {
+    width: 44px;
+    height: 44px;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+    position: relative;
+    z-index: 2;
+}
+@keyframes logoFloat {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(2deg); }
+}
+.app-logo::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 28px;
+    border: 2px solid rgba(37, 211, 102, 0.4);
+    animation: ringPulse 2.5s ease-out infinite;
+}
+@keyframes ringPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+.app-name {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #ffffff 0%, #4ade80 50%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    filter: drop-shadow(0 3px 8px rgba(37, 211, 102, 0.4));
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.app-tagline {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ============== STATS ============== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.7s ease 0.1s backwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.stat {
+    background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 10px 6px;
+    text-align: center;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.3), 0 8px 14px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.15), inset 0 -2px 4px rgba(0,0,0,0.3);
+}
+.stat-num {
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.stat-lbl {
+    font-size: 9px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ============== WHATSAPP CARD ============== */
+.wa-card {
+    background: linear-gradient(160deg, rgba(37, 211, 102, 0.18), rgba(18, 140, 126, 0.06));
+    border: 1.5px solid rgba(37, 211, 102, 0.5);
+    border-radius: 20px;
+    padding: 20px 16px 18px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(37, 211, 102, 0.25), 0 10px 20px rgba(0,0,0,0.4), inset 0 2px 6px rgba(255,255,255,0.15), inset 0 -3px 8px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.7s ease 0.15s backwards;
+    backdrop-filter: blur(14px);
+}
+.wa-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(37, 211, 102, 0.12), transparent 30%);
+    animation: rotate 8s linear infinite;
+    pointer-events: none;
+}
+@keyframes rotate { to { transform: rotate(360deg); } }
+.wa-inner { position: relative; z-index: 2; }
+
+.urgency {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: linear-gradient(135deg, rgba(255, 82, 82, 0.25), rgba(255, 82, 82, 0.1));
+    border: 1px solid rgba(255, 82, 82, 0.5);
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #ff8080;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 10px rgba(255, 82, 82, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    animation: urgencyPulse 2s infinite;
+}
+@keyframes urgencyPulse {
+    0%,100% { box-shadow: 0 3px 10px rgba(255,82,82,0.3), inset 0 1px 0 rgba(255,255,255,0.1); }
+    50% { box-shadow: 0 3px 20px rgba(255,82,82,0.6), inset 0 1px 0 rgba(255,255,255,0.1); }
+}
+.urgency .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background: #ff5252;
+    border-radius: 50%;
+    animation: liveDot 1s infinite;
+}
+@keyframes liveDot {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.35); opacity: 0.5; }
+}
+
+.wa-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, #25D366 0%, #10b981 50%, #128C7E 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6), 0 6px 12px rgba(0,0,0,0.4), inset 0 -5px 12px rgba(0,0,0,0.3), inset 0 5px 12px rgba(255,255,255,0.35);
+    border: 1.5px solid rgba(255,255,255,0.25);
+}
+.wa-icon img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+}
+.wa-icon::before {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px; right: 3px;
+    height: 45%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.35), transparent);
+    border-radius: 50% 50% 40% 40%;
+    pointer-events: none;
+    z-index: 2;
+}
+.wa-icon svg {
+    width: 38px;
+    height: 38px;
+    fill: #ffffff;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+    position: relative;
+    z-index: 2;
+}
+.wa-icon::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.6);
+    animation: ringPulse 2s ease-out infinite;
+}
+
+.wa-title {
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    line-height: 1.3;
+}
+.wa-desc {
+    font-size: 11.5px;
+    color: #b8c4d4;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+.wa-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(160deg, #25D366 0%, #10b981 50%, #128C7E 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 14px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    box-shadow: 0 8px 0 #0d6e4f, 0 12px 20px rgba(37, 211, 102, 0.4), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: all 0.1s ease;
+    animation: btnPulse 2.2s ease-in-out infinite, btnGradient 3s linear infinite;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+@keyframes btnPulse {
+    0%,100% { box-shadow: 0 8px 0 #0d6e4f, 0 12px 20px rgba(37, 211, 102, 0.4), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 8px 0 #0d6e4f, 0 15px 28px rgba(37, 211, 102, 0.7), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.2); }
+}
+@keyframes btnGradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+.wa-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    animation: btnShine 2.5s infinite;
+}
+@keyframes btnShine { to { left: 100%; } }
+.wa-btn:active {
+    transform: translateY(6px);
+    box-shadow: 0 3px 0 #0d6e4f, 0 4px 8px rgba(37, 211, 102, 0.4), inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.wa-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+.members-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 12px;
+    font-size: 10.5px;
+    color: #94a3b8;
+    font-weight: 600;
+    flex-wrap: wrap;
+}
+.members-bar .count {
+    color: #4ade80;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============== CONTACT CARD ============== */
+.contact-card {
+    background: linear-gradient(160deg, rgba(37, 211, 102, 0.14), rgba(18, 140, 126, 0.04));
+    border: 1.5px solid rgba(37, 211, 102, 0.4);
+    border-radius: 20px;
+    padding: 18px 16px;
+    margin-bottom: 16px;
+    text-align: left;
+    animation: fadeInUp 0.7s ease 0.2s backwards;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.15), 0 8px 16px rgba(0,0,0,0.3), inset 0 2px 6px rgba(255,255,255,0.1), inset 0 -3px 8px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+}
+.contact-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-align: left;
+}
+.contact-desc {
+    font-size: 11.5px;
+    color: #b8c4d4;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(160deg, #25D366 0%, #10b981 50%, #128C7E 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 14px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 0 #0d6e4f, 0 12px 20px rgba(37, 211, 102, 0.5), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: all 0.1s ease;
+    animation: btnGradient 3s linear infinite;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.contact-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #0d6e4f, 0 4px 8px rgba(37, 211, 102, 0.4), inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.contact-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+/* ============== FEATURES ============== */
+.features {
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 18px 16px;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.7s ease 0.25s backwards;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4), 0 8px 16px rgba(0,0,0,0.3), inset 0 2px 6px rgba(255,255,255,0.1), inset 0 -3px 8px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+}
+.features-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 14px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding-left: 3px;
+}
+.features-title span {
+    background: linear-gradient(135deg, #25D366, #4ade80, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-align: left;
+}
+.feature:last-child { border-bottom: none; padding-bottom: 0; }
+.feature:first-of-type { padding-top: 0; }
+
+.f-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: linear-gradient(160deg, #25D366 0%, #10b981 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    position: relative;
+    box-shadow: 0 5px 0 #0d6e4f, 0 7px 14px rgba(37, 211, 102, 0.4), inset 0 2px 4px rgba(255,255,255,0.35), inset 0 -2px 4px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.f-icon::before {
+    content: '';
+    position: absolute;
+    top: 2px; left: 2px; right: 2px;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent);
+    border-radius: 9px 9px 40% 40%;
+    pointer-events: none;
+}
+.f-text {
+    flex: 1;
+    text-align: left;
+    padding-top: 1px;
+}
+.f-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    text-align: left;
+    margin-bottom: 2px;
+    letter-spacing: 0.2px;
+}
+.f-desc {
+    font-size: 10.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* ============== ACTION CARD ============== */
+.action-card {
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 18px 16px;
+    margin-bottom: 16px;
+    text-align: left;
+    animation: fadeInUp 0.7s ease 0.35s backwards;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4), 0 8px 16px rgba(0,0,0,0.3), inset 0 2px 6px rgba(255,255,255,0.1), inset 0 -3px 8px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+}
+.action-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    text-align: left;
+}
+.action-desc {
+    font-size: 11.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(160deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 14px;
+    color: #1a0d05;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 0 #92400e, 0 12px 20px rgba(251, 191, 36, 0.4), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.5), inset 0 -2px 4px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: all 0.1s ease;
+    animation: btnGradient 4s linear infinite;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+}
+.action-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #92400e, 0 4px 8px rgba(251, 191, 36, 0.4), inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.action-btn .icon { font-size: 18px; }
+
+.action-btn.secondary {
+    background: linear-gradient(160deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+    background-size: 200% auto;
+    color: #ffffff;
+    box-shadow: 0 8px 0 #1e3a8a, 0 12px 20px rgba(59, 130, 246, 0.4), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.action-btn.secondary:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #1e3a8a, 0 4px 8px rgba(59, 130, 246, 0.4), inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ============== TRUST ============== */
+.trust {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.7s ease 0.45s backwards;
+}
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.3px;
+    padding: 7px 11px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.3), 0 5px 10px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1);
+}
+.trust-item .icon { font-size: 12px; }
+
+.footer {
+    text-align: center;
+    padding: 18px 0 0;
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.6;
+    animation: fadeInUp 0.7s ease 0.5s backwards;
+}
+
+/* ============== STICKY BAR ============== */
+.sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, transparent, rgba(7, 16, 26, 0.98) 40%);
+    z-index: 90;
+    transition: transform 0.4s ease;
+}
+.sticky-bar.hidden { transform: translateY(120%); }
+.sticky-btn {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: linear-gradient(160deg, #25D366 0%, #10b981 50%, #128C7E 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 14px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 0 #0d6e4f, 0 12px 20px rgba(37, 211, 102, 0.5), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: all 0.1s ease;
+    animation: btnGradient 3s linear infinite;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.sticky-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #0d6e4f, 0 4px 8px rgba(37, 211, 102, 0.4), inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.sticky-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+/* ============== TOAST ============== */
+.toast {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    padding: 12px 22px;
+    background: linear-gradient(160deg, #25D366, #10b981);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5), inset 0 1px 2px rgba(255,255,255,0.3);
+    z-index: 99999;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    max-width: 90%;
+    text-align: center;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+.toast.error {
+    background: linear-gradient(160deg, #ef4444, #dc2626);
+    box-shadow: 0 10px 30px rgba(239,68,68,0.5);
+}
+
+/* ============== ADMIN OVERLAY ============== */
+.admin-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: linear-gradient(135deg, #07101a 0%, #0a1a2e 50%, #07101a 100%);
+    overflow-y: auto;
+    padding: 20px 16px 70px;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+}
+.admin-overlay.active { display: block; }
+
+.admin-container { max-width: 480px; margin: 0 auto; }
+.admin-container h1 {
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #ffffff, #4ade80, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.admin-sub {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 22px;
+}
+
+.admin-login {
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 26px 20px;
+    margin-top: 50px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 2px 6px rgba(255,255,255,0.1);
+}
+.admin-login h2 {
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.admin-login p {
+    font-size: 11.5px;
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+.admin-login input {
+    width: 100%;
+    padding: 13px 15px;
+    background: rgba(0,0,0,0.35);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 14px;
+    -webkit-user-select: text;
+    user-select: text;
+}
+.admin-login input:focus { border-color: #25D366; }
+.admin-login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(160deg, #25D366, #10b981, #128C7E);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #0d6e4f, 0 10px 18px rgba(37,211,102,0.4), inset 0 2px 4px rgba(255,255,255,0.3);
+    transform: translateY(0);
+    transition: all 0.1s;
+}
+.admin-login-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #0d6e4f, 0 4px 8px rgba(37,211,102,0.4);
+}
+
+/* ============== ACCORDION ============== */
+.admin-section {
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.35), inset 0 2px 6px rgba(255,255,255,0.08);
+    transition: all 0.3s ease;
+}
+.admin-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 16px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.2s;
+    background: linear-gradient(160deg, rgba(37, 211, 102, 0.08), rgba(37, 211, 102, 0.02));
+}
+.admin-section-header:active {
+    background: linear-gradient(160deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
+}
+.admin-section-header .section-icon {
+    font-size: 17px;
+    margin-right: 10px;
+}
+.admin-section-header .section-title-wrap {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.admin-section-header h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #4ade80;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.admin-section-header .arrow {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.15);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #4ade80;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+.admin-section.open .arrow {
+    transform: rotate(180deg);
+}
+.admin-section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 16px;
+}
+.admin-section.open .admin-section-body {
+    max-height: 8000px;
+    padding: 6px 16px 18px;
+}
+.admin-section.open {
+    border-color: rgba(37, 211, 102, 0.4);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.15), inset 0 2px 6px rgba(255,255,255,0.08);
+}
+
+.admin-field { margin-bottom: 12px; }
+.admin-field label {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+.admin-field input,
+.admin-field textarea {
+    width: 100%;
+    padding: 11px 13px;
+    background: rgba(0,0,0,0.35);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    -webkit-user-select: text;
+    user-select: text;
+    transition: border-color 0.2s;
+}
+.admin-field input:focus,
+.admin-field textarea:focus {
+    border-color: #25D366;
+}
+.admin-field textarea {
+    resize: vertical;
+    min-height: 65px;
+}
+
+/* ============== SECTION SAVE BUTTON ============== */
+.section-save-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    background: linear-gradient(160deg, #25D366, #10b981, #128C7E);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #0d6e4f, 0 10px 18px rgba(37,211,102,0.4), inset 0 2px 4px rgba(255,255,255,0.3);
+    transform: translateY(0);
+    transition: all 0.1s;
+    animation: btnGradient 3s linear infinite;
+}
+.section-save-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #0d6e4f, 0 4px 8px rgba(37,211,102,0.4);
+}
+
+.admin-save-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(160deg, #fbbf24, #f59e0b, #d97706);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 14px;
+    color: #1a0d05;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #92400e, 0 12px 20px rgba(251,191,36,0.4), inset 0 2px 4px rgba(255,255,255,0.5);
+    transform: translateY(0);
+    transition: all 0.1s;
+    margin-bottom: 12px;
+    margin-top: 8px;
+}
+.admin-save-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #92400e, 0 5px 10px rgba(251,191,36,0.4);
+}
+
+.admin-close-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(160deg, #ef4444, #dc2626);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #7f1d1d, 0 10px 18px rgba(239,68,68,0.4);
+    transform: translateY(0);
+    transition: all 0.1s;
+}
+.admin-close-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #7f1d1d;
+}
+
+.admin-loading {
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 360px) {
+    html { font-size: 13px; }
+    .app-name { font-size: 22px; }
+    .app-logo { width: 72px; height: 72px; }
+    .app-logo svg { width: 38px; height: 38px; }
+    .wa-icon { width: 62px; height: 62px; }
+    .wa-icon svg { width: 34px; height: 34px; }
+    .wa-title { font-size: 15.5px; }
+    .f-icon { width: 38px; height: 38px; font-size: 16px; }
+    .container { padding: 16px 14px 110px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-wrap">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="dots-layer" id="dotsLayer"></div>
+</div>
+
+<div class="container">
+
+    <div class="header">
+        <div class="app-logo" id="appLogo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#ffffff"/>
+            </svg>
+        </div>
+        <h1 class="app-name" id="appName">Wingo Pro</h1>
+        <p class="app-tagline" id="appTagline">Your daily earning and learning companion</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-num" id="statMembersTop">50K+</div>
+            <div class="stat-lbl" id="statMembersLabel">Members</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num" id="statActiveTop">24/7</div>
+            <div class="stat-lbl" id="statActiveLabel">Active</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num" id="statFreeTop">100%</div>
+            <div class="stat-lbl" id="statFreeLabel">Free</div>
+        </div>
+    </div>
+
+    <div class="wa-card" id="waSection">
+        <div class="wa-inner">
+            <div style="text-align:center;">
+                <div class="urgency">
+                    <span class="pulse-dot"></span>
+                    <span id="urgencyText">Only</span> <span id="spotsLeft">47</span> <span id="urgencyText2">spots left today</span>
+                </div>
+            </div>
+
+            <div class="wa-icon" id="waIcon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </div>
+
+            <div class="wa-title" id="waTitle">Join Our WhatsApp Channel</div>
+            <div class="wa-desc" id="waDesc">
+                Daily sessions, free tips and exclusive updates — only on our WhatsApp channel
+            </div>
+
+            <button class="wa-btn" onclick="joinWhatsApp()">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span id="waBtnText">JOIN FREE NOW</span>
+            </button>
+
+            <div class="members-bar">
+                <span>👥</span>
+                <span><span class="count" id="memberCountBottom">2,000+</span> <span id="membersBarText">members already joined</span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-title" id="contactTitle">WhatsApp Channel Join Nahi Ho Raha?</div>
+        <div class="contact-desc" id="contactDesc">
+            Agar kisi bhi wajah se WhatsApp channel join nahi hota ya koi problem aa rahi hai, to neeche diye gaye button se humse direct WhatsApp par rabta karein. Hum aapki poori madad karenge.
+        </div>
+        <button class="contact-btn" onclick="chatWhatsApp()">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span id="contactBtnText">CHAT ON WHATSAPP</span>
+        </button>
+    </div>
+
+    <div class="features">
+        <div class="features-title" id="featuresTitle">Kya <span>Aap Ko Milega</span></div>
+
+        <div class="feature">
+            <div class="f-icon">📅</div>
+            <div class="f-text">
+                <div class="f-title" id="f1Title">Daily Sessions</div>
+                <div class="f-desc" id="f1Desc">Rozana teen baar live session — subah, dopahar aur shaam</div>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="f-icon">🎁</div>
+            <div class="f-text">
+                <div class="f-title" id="f2Title">Free Tips & Hacks</div>
+                <div class="f-desc" id="f2Desc">Bilkul free tips, tricks aur seekhne ka material</div>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="f-icon">💰</div>
+            <div class="f-text">
+                <div class="f-title" id="f3Title">Free Deposit Guide</div>
+                <div class="f-desc" id="f3Desc">Step by step guide — deposit kaise karein aur shuru kaise karein</div>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="f-icon">👥</div>
+            <div class="f-text">
+                <div class="f-title" id="f4Title">Active Community</div>
+                <div class="f-desc" id="f4Desc">2,000+ members ki active community ka hissa banein</div>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="f-icon">⚡</div>
+            <div class="f-text">
+                <div class="f-title" id="f5Title">Instant Updates</div>
+                <div class="f-desc" id="f5Desc">Har nayi update sab se pehle aap tak pahunche</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-card">
+        <div class="action-title" id="actionTitle">Download Hack</div>
+        <div class="action-desc" id="actionDesc">Neeche button se hack download karein ya register karein</div>
+        <button class="action-btn" onclick="downloadApp()">
+            <span class="icon">⬇️</span>
+            <span id="downloadBtnText">DOWNLOAD HACK</span>
+        </button>
+        <button class="action-btn secondary" onclick="registerNow()">
+            <span class="icon">📝</span>
+            <span id="registerBtnText">REGISTER NOW</span>
+        </button>
+    </div>
+
+    <div class="trust">
+        <div class="trust-item"><span class="icon">🔒</span> <span id="trust1">100% Secure</span></div>
+        <div class="trust-item"><span class="icon">✅</span> <span id="trust2">Verified</span></div>
+        <div class="trust-item"><span class="icon">⚡</span> <span id="trust3">Instant Join</span></div>
+    </div>
+
+    <div class="footer" id="footerText">© 2025 Wingo Pro — All Rights Reserved</div>
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+    <button class="sticky-btn" onclick="joinWhatsApp()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span id="stickyBtnText">JOIN WHATSAPP CHANNEL</span>
+    </button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="adminOverlay">
+    <div class="admin-container">
+        <h1>Admin Panel</h1>
+        <p class="admin-sub">Wingo Pro — Control Everything</p>
+
+        <div class="admin-login" id="adminLoginBox">
+            <h2>🔐 Admin Login</h2>
+            <p>Enter password to continue</p>
+            <input type="password" id="adminPassword" placeholder="Enter password" autocomplete="off">
+            <button class="admin-login-btn" onclick="adminLogin()">LOGIN</button>
+        </div>
+
+        <div id="adminPanel" style="display:none;">
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">📱</span>
+                        <h3>App Branding</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>App Name</label>
+                        <input type="text" id="a_appName">
+                    </div>
+                    <div class="admin-field">
+                        <label>App Tagline</label>
+                        <input type="text" id="a_appTagline">
+                    </div>
+                    <div class="admin-field">
+                        <label>App Logo Image URL</label>
+                        <input type="text" id="a_appLogo" placeholder="https://...">
+                    </div>
+                    <div class="admin-field">
+                        <label>Footer Text</label>
+                        <input type="text" id="a_footerText">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['appName','appTagline','appLogo','footerText'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">📊</span>
+                        <h3>Stats Section</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Members Count (Top — "50K+")</label>
+                        <input type="text" id="a_statMembersTop">
+                    </div>
+                    <div class="admin-field">
+                        <label>Members Label</label>
+                        <input type="text" id="a_statMembersLabel">
+                    </div>
+                    <div class="admin-field">
+                        <label>Active Count (Top — "24/7")</label>
+                        <input type="text" id="a_statActiveTop">
+                    </div>
+                    <div class="admin-field">
+                        <label>Active Label</label>
+                        <input type="text" id="a_statActiveLabel">
+                    </div>
+                    <div class="admin-field">
+                        <label>Free Count (Top — "100%")</label>
+                        <input type="text" id="a_statFreeTop">
+                    </div>
+                    <div class="admin-field">
+                        <label>Free Label</label>
+                        <input type="text" id="a_statFreeLabel">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['statMembersTop','statMembersLabel','statActiveTop','statActiveLabel','statFreeTop','statFreeLabel'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">💬</span>
+                        <h3>WhatsApp Channel Card</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Urgency Text Left</label>
+                        <input type="text" id="a_urgencyText">
+                    </div>
+                    <div class="admin-field">
+                        <label>Spots Left</label>
+                        <input type="text" id="a_spotsLeft">
+                    </div>
+                    <div class="admin-field">
+                        <label>Urgency Text Right</label>
+                        <input type="text" id="a_urgencyText2">
+                    </div>
+                    <div class="admin-field">
+                        <label>Channel Image URL</label>
+                        <input type="text" id="a_waImage" placeholder="https://...">
+                    </div>
+                    <div class="admin-field">
+                        <label>Channel Title</label>
+                        <input type="text" id="a_waTitle">
+                    </div>
+                    <div class="admin-field">
+                        <label>Channel Description</label>
+                        <textarea id="a_waDesc"></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label>Join Button Text</label>
+                        <input type="text" id="a_waBtnText">
+                    </div>
+                    <div class="admin-field">
+                        <label>Members Bottom Count ("2,000+")</label>
+                        <input type="text" id="a_memberCountBottom">
+                    </div>
+                    <div class="admin-field">
+                        <label>Members Bar Text</label>
+                        <input type="text" id="a_membersBarText">
+                    </div>
+                    <div class="admin-field">
+                        <label>WhatsApp Channel Link</label>
+                        <input type="text" id="a_whatsappChannel">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['urgencyText','spotsLeft','urgencyText2','waImage','waTitle','waDesc','waBtnText','memberCountBottom','membersBarText','whatsappChannel'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">📞</span>
+                        <h3>Contact Card</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Contact Title</label>
+                        <input type="text" id="a_contactTitle">
+                    </div>
+                    <div class="admin-field">
+                        <label>Contact Description</label>
+                        <textarea id="a_contactDesc"></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label>Contact Button Text</label>
+                        <input type="text" id="a_contactBtnText">
+                    </div>
+                    <div class="admin-field">
+                        <label>WhatsApp Number (country code, no +)</label>
+                        <input type="text" id="a_whatsappNumber">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['contactTitle','contactDesc','contactBtnText','whatsappNumber'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">🎯</span>
+                        <h3>Features Section</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Features Title (HTML allowed)</label>
+                        <input type="text" id="a_featuresTitle">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 1 — Title</label>
+                        <input type="text" id="a_f1Title">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 1 — Description</label>
+                        <input type="text" id="a_f1Desc">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 2 — Title</label>
+                        <input type="text" id="a_f2Title">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 2 — Description</label>
+                        <input type="text" id="a_f2Desc">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 3 — Title</label>
+                        <input type="text" id="a_f3Title">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 3 — Description</label>
+                        <input type="text" id="a_f3Desc">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 4 — Title</label>
+                        <input type="text" id="a_f4Title">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 4 — Description</label>
+                        <input type="text" id="a_f4Desc">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 5 — Title</label>
+                        <input type="text" id="a_f5Title">
+                    </div>
+                    <div class="admin-field">
+                        <label>Feature 5 — Description</label>
+                        <input type="text" id="a_f5Desc">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['featuresTitle','f1Title','f1Desc','f2Title','f2Desc','f3Title','f3Desc','f4Title','f4Desc','f5Title','f5Desc'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">📥</span>
+                        <h3>Download / Register</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Action Title</label>
+                        <input type="text" id="a_actionTitle">
+                    </div>
+                    <div class="admin-field">
+                        <label>Action Description</label>
+                        <input type="text" id="a_actionDesc">
+                    </div>
+                    <div class="admin-field">
+                        <label>Download Button Text</label>
+                        <input type="text" id="a_downloadBtnText">
+                    </div>
+                    <div class="admin-field">
+                        <label>Download Hack URL</label>
+                        <input type="text" id="a_appDownloadLink">
+                    </div>
+                    <div class="admin-field">
+                        <label>Register Button Text</label>
+                        <input type="text" id="a_registerBtnText">
+                    </div>
+                    <div class="admin-field">
+                        <label>Register URL</label>
+                        <input type="text" id="a_registerLink">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['actionTitle','actionDesc','downloadBtnText','appDownloadLink','registerBtnText','registerLink'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">🏆</span>
+                        <h3>Trust Badges</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Trust 1</label>
+                        <input type="text" id="a_trust1">
+                    </div>
+                    <div class="admin-field">
+                        <label>Trust 2</label>
+                        <input type="text" id="a_trust2">
+                    </div>
+                    <div class="admin-field">
+                        <label>Trust 3</label>
+                        <input type="text" id="a_trust3">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['trust1','trust2','trust3'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="toggleSection(this)">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">🔘</span>
+                        <h3>Sticky Bar</h3>
+                    </div>
+                    <div class="arrow">▼</div>
+                </div>
+                <div class="admin-section-body">
+                    <div class="admin-field">
+                        <label>Sticky Button Text</label>
+                        <input type="text" id="a_stickyBtnText">
+                    </div>
+                    <button class="section-save-btn" onclick="saveSection(['stickyBtnText'])">💾 SAVE THIS SECTION</button>
+                </div>
+            </div>
+
+            <button class="admin-save-btn" onclick="saveAllConfig()">💾 SAVE ALL SECTIONS</button>
+            <button class="admin-close-btn" onclick="closeAdmin()">✕ CLOSE ADMIN</button>
+
+            <div class="admin-loading" id="adminLoading"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ==========================================================
+// CONFIG
+// ==========================================================
+const FIREBASE_URL = "https://landing-page-on-whatsapp-default-rtdb.firebaseio.com/config.json";
+const ADMIN_PASSWORD = "Samadrrr120";
+
+const FIELDS = [
+    "appName", "appTagline", "appLogo", "footerText",
+    "statMembersTop", "statMembersLabel", "statActiveTop", "statActiveLabel", "statFreeTop", "statFreeLabel",
+    "urgencyText", "spotsLeft", "urgencyText2",
+    "waImage", "waTitle", "waDesc", "waBtnText", "memberCountBottom", "membersBarText", "whatsappChannel",
+    "contactTitle", "contactDesc", "contactBtnText", "whatsappNumber",
+    "featuresTitle",
+    "f1Title", "f1Desc", "f2Title", "f2Desc", "f3Title", "f3Desc", "f4Title", "f4Desc", "f5Title", "f5Desc",
+    "actionTitle", "actionDesc", "downloadBtnText", "appDownloadLink", "registerBtnText", "registerLink",
+    "trust1", "trust2", "trust3",
+    "stickyBtnText"
+];
+
+const DEFAULT_CONFIG = {
+    appName: "Wingo Pro",
+    appTagline: "Your daily earning and learning companion",
+    appLogo: "",
+    footerText: "© 2025 Wingo Pro — All Rights Reserved",
+    statMembersTop: "50K+",
+    statMembersLabel: "Members",
+    statActiveTop: "24/7",
+    statActiveLabel: "Active",
+    statFreeTop: "100%",
+    statFreeLabel: "Free",
+    urgencyText: "Only",
+    spotsLeft: "47",
+    urgencyText2: "spots left today",
+    waImage: "",
+    waTitle: "Join Our WhatsApp Channel",
+    waDesc: "Daily sessions, free tips and exclusive updates — only on our WhatsApp channel",
+    waBtnText: "JOIN FREE NOW",
+    memberCountBottom: "2,000+",
+    membersBarText: "members already joined",
+    whatsappChannel: "https://whatsapp.com/channel/0029VbD1dI8IiRopIO41SY1v",
+    contactTitle: "WhatsApp Channel Join Nahi Ho Raha?",
+    contactDesc: "Agar kisi bhi wajah se WhatsApp channel join nahi hota ya koi problem aa rahi hai, to neeche diye gaye button se humse direct WhatsApp par rabta karein. Hum aapki poori madad karenge.",
+    contactBtnText: "CHAT ON WHATSAPP",
+    whatsappNumber: "923001234567",
+    featuresTitle: "Kya <span>Aap Ko Milega</span>",
+    f1Title: "Daily Sessions",
+    f1Desc: "Rozana teen baar live session — subah, dopahar aur shaam",
+    f2Title: "Free Tips & Hacks",
+    f2Desc: "Bilkul free tips, tricks aur seekhne ka material",
+    f3Title: "Free Deposit Guide",
+    f3Desc: "Step by step guide — deposit kaise karein aur shuru kaise karein",
+    f4Title: "Active Community",
+    f4Desc: "2,000+ members ki active community ka hissa banein",
+    f5Title: "Instant Updates",
+    f5Desc: "Har nayi update sab se pehle aap tak pahunche",
+    actionTitle: "Download Hack",
+    actionDesc: "Neeche button se hack download karein ya register karein",
+    downloadBtnText: "DOWNLOAD HACK",
+    appDownloadLink: "https://your-app-download-link.com",
+    registerBtnText: "REGISTER NOW",
+    registerLink: "https://your-register-link.com",
+    trust1: "100% Secure",
+    trust2: "Verified",
+    trust3: "Instant Join",
+    stickyBtnText: "JOIN WHATSAPP CHANNEL"
+};
+
+let CONFIG = { ...DEFAULT_CONFIG };
+
+// ==========================================================
+// APPLY CONFIG
+// ==========================================================
+function applyConfig() {
+    document.getElementById("appName").textContent = CONFIG.appName;
+    document.getElementById("appTagline").textContent = CONFIG.appTagline;
+    document.getElementById("footerText").textContent = CONFIG.footerText;
+    document.title = CONFIG.appName + " — Join Official Channel";
+
+    document.getElementById("statMembersTop").textContent = CONFIG.statMembersTop;
+    document.getElementById("statMembersLabel").textContent = CONFIG.statMembersLabel;
+    document.getElementById("statActiveTop").textContent = CONFIG.statActiveTop;
+    document.getElementById("statActiveLabel").textContent = CONFIG.statActiveLabel;
+    document.getElementById("statFreeTop").textContent = CONFIG.statFreeTop;
+    document.getElementById("statFreeLabel").textContent = CONFIG.statFreeLabel;
+
+    document.getElementById("urgencyText").textContent = CONFIG.urgencyText;
+    document.getElementById("spotsLeft").textContent = CONFIG.spotsLeft;
+    document.getElementById("urgencyText2").textContent = CONFIG.urgencyText2;
+    document.getElementById("waTitle").textContent = CONFIG.waTitle;
+    document.getElementById("waDesc").textContent = CONFIG.waDesc;
+    document.getElementById("waBtnText").textContent = CONFIG.waBtnText;
+    document.getElementById("memberCountBottom").textContent = CONFIG.memberCountBottom;
+    document.getElementById("membersBarText").textContent = CONFIG.membersBarText;
+
+    document.getElementById("contactTitle").textContent = CONFIG.contactTitle;
+    document.getElementById("contactDesc").textContent = CONFIG.contactDesc;
+    document.getElementById("contactBtnText").textContent = CONFIG.contactBtnText;
+
+    document.getElementById("featuresTitle").innerHTML = CONFIG.featuresTitle;
+    document.getElementById("f1Title").textContent = CONFIG.f1Title;
+    document.getElementById("f1Desc").textContent = CONFIG.f1Desc;
+    document.getElementById("f2Title").textContent = CONFIG.f2Title;
+    document.getElementById("f2Desc").textContent = CONFIG.f2Desc;
+    document.getElementById("f3Title").textContent = CONFIG.f3Title;
+    document.getElementById("f3Desc").textContent = CONFIG.f3Desc;
+    document.getElementById("f4Title").textContent = CONFIG.f4Title;
+    document.getElementById("f4Desc").textContent = CONFIG.f4Desc;
+    document.getElementById("f5Title").textContent = CONFIG.f5Title;
+    document.getElementById("f5Desc").textContent = CONFIG.f5Desc;
+
+    document.getElementById("actionTitle").textContent = CONFIG.actionTitle;
+    document.getElementById("actionDesc").textContent = CONFIG.actionDesc;
+    document.getElementById("downloadBtnText").textContent = CONFIG.downloadBtnText;
+    document.getElementById("registerBtnText").textContent = CONFIG.registerBtnText;
+
+    document.getElementById("trust1").textContent = CONFIG.trust1;
+    document.getElementById("trust2").textContent = CONFIG.trust2;
+    document.getElementById("trust3").textContent = CONFIG.trust3;
+
+    document.getElementById("stickyBtnText").textContent = CONFIG.stickyBtnText;
+
+    if (CONFIG.appLogo) {
+        const logoEl = document.getElementById("appLogo");
+        logoEl.innerHTML = '<img src="' + CONFIG.appLogo + '" alt="logo" onerror="this.style.display=\'none\'">';
+    }
+
+    if (CONFIG.waImage) {
+        const waIconEl = document.getElementById("waIcon");
+        waIconEl.innerHTML = '<img src="' + CONFIG.waImage + '" alt="wa" onerror="this.style.display=\'none\'">';
+    }
+}
+
+// ==========================================================
+// LOAD FROM FIREBASE
+// ==========================================================
+async function loadConfig() {
+    try {
+        const res = await fetch(FIREBASE_URL + "?t=" + Date.now());
+        const data = await res.json();
+        if (data && typeof data === "object") {
+            CONFIG = { ...DEFAULT_CONFIG, ...data };
+        }
+    } catch (err) {
+        console.log("Firebase load failed, using defaults");
+    }
+    applyConfig();
+}
+
+// ==========================================================
+// ACTIONS
+// ==========================================================
+function joinWhatsApp() {
+    if (!CONFIG.whatsappChannel) { showToast("Channel link set nahi hai"); return; }
+    showToast("WhatsApp khul raha hai...");
+    setTimeout(() => window.open(CONFIG.whatsappChannel, "_blank"), 250);
+}
+
+function chatWhatsApp() {
+    if (!CONFIG.whatsappNumber) { showToast("WhatsApp number set nahi hai"); return; }
+    const msg = encodeURIComponent("Assalam o Alaikum! Mujhe WhatsApp channel join karne mein problem aa rahi hai. Please madad karein.");
+    showToast("WhatsApp chat khul rahi hai...");
+    setTimeout(() => window.open("https://wa.me/" + CONFIG.whatsappNumber + "?text=" + msg, "_blank"), 250);
+}
+
+function downloadApp() {
+    if (!CONFIG.appDownloadLink) { showToast("Download link set nahi hai"); return; }
+    showToast("Download khul raha hai...");
+    setTimeout(() => window.location.href = CONFIG.appDownloadLink, 250);
+}
+
+function registerNow() {
+    if (!CONFIG.registerLink) { showToast("Register link set nahi hai"); return; }
+    showToast("Register page khul raha hai...");
+    setTimeout(() => window.location.href = CONFIG.registerLink, 250);
+}
+
+let toastTimer = null;
+function showToast(msg, type) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.className = "toast show" + (type === "error" ? " error" : "");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2500);
+}
+
+function createDots() {
+    const layer = document.getElementById("dotsLayer");
+    for (let i = 0; i < 30; i++) {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        const rand = Math.random();
+        if (rand > 0.7) dot.classList.add("gold");
+        else if (rand > 0.5) dot.classList.add("cyan");
+        dot.style.left = Math.random() * 100 + "%";
+        dot.style.animationDuration = (Math.random() * 15 + 10) + "s";
+        dot.style.animationDelay = (Math.random() * 12) + "s";
+        const size = Math.random() * 3 + 2;
+        dot.style.width = size + "px";
+        dot.style.height = size + "px";
+        dot.style.setProperty("--x", (Math.random() * 100 - 50) + "px");
+        layer.appendChild(dot);
+    }
+}
+
+let lastScroll = 0;
+const stickyBar = document.getElementById("stickyBar");
+window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 200) stickyBar.classList.add("hidden");
+    else stickyBar.classList.remove("hidden");
+    lastScroll = currentScroll;
+}, { passive: true });
+
+// ==========================================================
+// LONG PRESS 5 SEC
+// ==========================================================
+(function setupLongPress() {
+    const nameEl = document.getElementById("appName");
+    const logoEl = document.getElementById("appLogo");
+    let pressTimer = null;
+
+    function startPress() {
+        pressTimer = setTimeout(() => {
+            openAdmin();
+        }, 5000);
+    }
+    function cancelPress() {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+    }
+
+    [nameEl, logoEl].forEach(el => {
+        el.addEventListener("touchstart", startPress, { passive: true });
+        el.addEventListener("touchend", cancelPress);
+        el.addEventListener("touchcancel", cancelPress);
+        el.addEventListener("mousedown", startPress);
+        el.addEventListener("mouseup", cancelPress);
+        el.addEventListener("mouseleave", cancelPress);
+    });
+})();
+
+// ==========================================================
+// ADMIN FUNCTIONS
+// ==========================================================
+function openAdmin() {
+    document.getElementById("adminOverlay").classList.add("active");
+    document.body.style.overflow = "hidden";
+
+    if (sessionStorage.getItem("admin_logged") === "yes") {
+        showAdminPanel();
+    } else {
+        document.getElementById("adminLoginBox").style.display = "block";
+        document.getElementById("adminPanel").style.display = "none";
+        document.getElementById("adminPassword").value = "";
+    }
+}
+
+function closeAdmin() {
+    document.getElementById("adminOverlay").classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+function adminLogin() {
+    const pass = document.getElementById("adminPassword").value.trim();
+    if (pass === ADMIN_PASSWORD) {
+        sessionStorage.setItem("admin_logged", "yes");
+        showAdminPanel();
+        showToast("✅ Login successful");
+    } else {
+        showToast("❌ Wrong password", "error");
+    }
+}
+
+function showAdminPanel() {
+    document.getElementById("adminLoginBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+
+    FIELDS.forEach(f => {
+        const el = document.getElementById("a_" + f);
+        if (el) el.value = CONFIG[f] || "";
+    });
+}
+
+function toggleSection(headerEl) {
+    const section = headerEl.parentElement;
+    section.classList.toggle("open");
+}
+
+async function saveSection(fields) {
+    document.getElementById("adminLoading").textContent = "Saving...";
+
+    const data = {};
+    fields.forEach(f => {
+        const el = document.getElementById("a_" + f);
+        if (el) data[f] = el.value;
+    });
+
+    CONFIG = { ...CONFIG, ...data };
+    applyConfig();
+
+    try {
+        const res = await fetch(FIREBASE_URL, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        if (res.ok) {
+            showToast("✅ Saved successfully!");
+            document.getElementById("adminLoading").textContent = "";
+        } else {
+            showToast("❌ Save failed", "error");
+            document.getElementById("adminLoading").textContent = "Save failed";
+        }
+    } catch (err) {
+        showToast("❌ Network error", "error");
+        document.getElementById("adminLoading").textContent = "Network error";
+    }
+}
+
+async function saveAllConfig() {
+    document.getElementById("adminLoading").textContent = "Saving all...";
+
+    const data = {};
+    FIELDS.forEach(f => {
+        const el = document.getElementById("a_" + f);
+        if (el) data[f] = el.value;
+    });
+
+    CONFIG = { ...CONFIG, ...data };
+    applyConfig();
+
+    try {
+        const res = await fetch(FIREBASE_URL, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        if (res.ok) {
+            showToast("✅ All saved!");
+            document.getElementById("adminLoading").textContent = "";
+        } else {
+            showToast("❌ Save failed", "error");
+            document.getElementById("adminLoading").textContent = "Save failed";
+        }
+    } catch (err) {
+        showToast("❌ Network error", "error");
+        document.getElementById("adminLoading").textContent = "Network error";
+    }
+}
+
+document.getElementById("adminPassword").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") adminLogin();
+});
+
+window.addEventListener("load", () => {
+    loadConfig();
+    createDots();
+    setTimeout(() => {
+        const waSection = document.getElementById("waSection");
+        if (waSection) waSection.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 2000);
+});
+</script>
+
+</body>
+</html>
